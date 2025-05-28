@@ -67,6 +67,15 @@ def display_results(videos, query):
 
 
 
+"""
+Process
+1. First, the Embedding Index is loaded into a Pandas Dataframe.
+2. Next, the user is prompted to enter a query.
+3. Then the `get_videos` function is called to search the Embedding Index for the query.
+4. Finally, the `display_results` function is called to display the results to the user.
+5. The user is then prompted to enter another query. This process continues until the user enters `exit`.
+"""
+
 pd_vectors = load_dataset(DATASET_NAME)
 while True:
     query = input("Enter a query: ") # get user query from input
@@ -74,6 +83,7 @@ while True:
         break
     videos = get_videos(query, pd_vectors, 5)
     display_results(videos, query)
+
 
 
 
