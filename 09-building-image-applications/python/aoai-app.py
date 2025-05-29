@@ -17,7 +17,7 @@ client = AzureOpenAI(
   azure_endpoint=os.environ['AZURE_OPENAI_ENDPOINT'] 
   )
 
-model = os.environ['AZURE_OPENAI_DEPLOYMENT']
+model = os.environ['AZURE_OPENAI_IMAGE_DEPLOYMENT']
 
 
 try:
@@ -25,7 +25,7 @@ try:
 
     result = client.images.generate(
         model=model,
-        prompt='Bunny on horse, holding a lollipop, on a foggy meadow where it grows daffodils. It says "hello"',    # Enter your prompt text here
+        prompt='A natural image of Guangzhou city in the night. Show the canton tower with the words "Guangzhou" in chinese written on it.',    # Enter your prompt text here
         size='1024x1024',
         n=1
     )
